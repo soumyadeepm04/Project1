@@ -5,12 +5,11 @@
 {% endblock %}
 
 {% block body %}
-    <h1>All Pages</h1>
-
+    <h1>Matching Pages</h1>
     <ul>
-        {% for entry in entries %}
-            <li><a href = "/wiki/{{entry}}">{{entry}}</a> </li>
-        {% endfor %}
+        {%for element in substr_list%}
+            <a href = "wiki/{{element}}">{{element}}</a>
+        {%endfor%}
     </ul>
 
 {% endblock %}
