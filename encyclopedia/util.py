@@ -31,7 +31,13 @@ def get_entry(title):
     entry exists, the function returns None.
     """
     try:
-        f = default_storage.open(f"entries/{title}.md")
+        file_names = list_entries()
+        final_file_name = None
+        for file in file_names:
+            if file.lower() == str(title).lower():
+                final_file_name = file
+
+        f = default_storage.open(f"entries/{final_file_name}.md")
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None

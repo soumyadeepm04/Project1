@@ -5,9 +5,9 @@
 {% endblock %}
 
 {% block body %}
-{% if {{getentry}}=="None" %}
-    <h3>Requested page not found!</h3>
-{% else %}
-    {{getentry}}
-{% endif %}
+{%if entry != None%}
+    {{ entry }}
+{%else%}
+    Requested entry not found!
+{%endif%}
 {% endblock %}
